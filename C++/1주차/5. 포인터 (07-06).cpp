@@ -16,21 +16,21 @@ void ValueChange(int* value)
 
 int main()
 {
-	// ÁÖ¼ÒÀÇ Å©±â´Â 4¹ÙÀÌÆ® ¹× 8¹ÙÀÌÆ®·Î °íÁ¤, µð¹ö°ÅÀÇ ¹ÙÀÌÆ® Å©±â¸¦ µû¶ó°£´Ù.
+	// í¬ì¸í„° ë³€ìˆ˜ì˜ ì£¼ì†Œì˜ í¬ê¸°ëŠ” 4ë°”ì´íŠ¸ ë° 8ë°”ì´íŠ¸ë¡œ ê³ ì •, ë””ë²„ê±°ì˜ ë°”ì´íŠ¸ í¬ê¸°ë¥¼ ë”°ë¼ê°„ë‹¤.
 	int num = 30;
 
-	// Æ÷ÀÎÅÍ º¯¼ö : ÁÖ¼Ò¸¦ ´ã´Â º¯¼ö
+	// í¬ì¸í„° ë³€ìˆ˜ : ì£¼ì†Œë¥¼ ë‹´ëŠ” ë³€ìˆ˜
 	int* numPtr = &num;
 
-	cout << "numÀÇ °ª " << num << endl;
+	cout << "numì˜ ê°’ " << num << endl;
 
-	// &º¯¼ö¸í : º¯¼öÀÇ ÁÖ¼Ò
-	cout << "numÀÇ ÁÖ¼Ò " << &num << endl;
-	cout << "numPtrÀÇ °ª " << numPtr << endl;
+	// &ë³€ìˆ˜ëª… : ë³€ìˆ˜ì˜ ì£¼ì†Œ
+	cout << "numì˜ ì£¼ì†Œ " << &num << endl;
+	cout << "numPtrì˜ ê°’ " << numPtr << endl;
 
-	// *ÁÖ¼Ò : ÇØ´ç ÁÖ¼ÒÀÇ °ª
-	cout << "numPtrÀÌ °¡¸®Å°´Â °ª " << *numPtr << endl;
-	cout << "numPtrÀÇ ÁÖ¼Ò" << &numPtr << endl;
+	// *ì£¼ì†Œ : í•´ë‹¹ ì£¼ì†Œì˜ ê°’
+	cout << "numPtrì´ ê°€ë¦¬í‚¤ëŠ” ê°’ " << *numPtr << endl;
+	cout << "numPtrì˜ ì£¼ì†Œ" << &numPtr << endl;
 
 	ValueChange(&num);
 
@@ -39,9 +39,9 @@ int main()
 	int a = 30;
 	int b = 50;
 
-	cout << "½º¿Ò Àü : " << a << " " << b << endl;
+	cout << "ìŠ¤ì™‘ ì „ : " << a << " " << b << endl;
 	Swap(&a, &b);
-	cout << "½º¿Ò ÈÄ : " << a << " " << b << endl;
+	cout << "ìŠ¤ì™‘ í›„ : " << a << " " << b << endl;
 
 	return 0;
 }

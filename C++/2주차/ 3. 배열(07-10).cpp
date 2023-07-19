@@ -3,27 +3,27 @@ using namespace std;
 
 int main()
 {
-	// ¹è¿­ 
-	// ¹è¿­ : µ¿ÀÏÇÑ µ¥ÀÌÅÍÅ¸ÀÔÀÇ ¹­À½
+	// ë°°ì—´ 
+	// ë°°ì—´ : ë™ì¼í•œ ë°ì´í„°íƒ€ì…ì˜ ë¬¶ìŒ
 	int scores[3];
 	scores[0] = 80;
 	scores[1] = 70;
 	scores[2] = 50;
 
-	// ¹è¿­ÀÇ ½ÃÀÛ ÁÖ¼Ò
+	// ë°°ì—´ì˜ ì‹œì‘ ì£¼ì†Œ
 	cout << scores << endl;
 
-	// ¹è¿­Àº ¸Ş¸ğ¸®³»¿¡¼­ ¿¬¼ÓÀûÀÎ Èå¸§À» °¡Áö°í ÀÖ´Ù.
+	// ë°°ì—´ì€ ë©”ëª¨ë¦¬ë‚´ì—ì„œ ì—°ì†ì ì¸ íë¦„ì„ ê°€ì§€ê³  ìˆë‹¤.
 	for (int i = 0; i < 3; i++)
 	{
-		cout << i << "¹øÂ°ÀÇ °ª : " << scores[i] << endl;
-		cout << i << "¹øÂ°ÀÇ ÁÖ¼Ò : " << &scores[i] << endl;
+		cout << i << "ë²ˆì§¸ì˜ ê°’ : " << scores[i] << endl;
+		cout << i << "ë²ˆì§¸ì˜ ì£¼ì†Œ : " << &scores[i] << endl;
 	}
 	cout << endl;
 
 	cout << &scores[0] << endl;
-	cout << &scores[0] + 1 << endl; // Ã¹¹øÂ° ¿ø¼ÒÀÇ ÁÖ¼Ò
-	cout << &scores[0] + 2 << endl; // µÎ¹øÂ° ¿ø¼ÒÀÇ ÁÖ¼Ò
+	cout << &scores[0] + 1 << endl; // ì²«ë²ˆì§¸ ì›ì†Œì˜ ì£¼ì†Œ
+	cout << &scores[0] + 2 << endl; // ë‘ë²ˆì§¸ ì›ì†Œì˜ ì£¼ì†Œ
 	cout << endl;
 
 	cout << *(&scores[0]) << endl;

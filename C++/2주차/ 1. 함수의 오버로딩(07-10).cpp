@@ -25,7 +25,7 @@ void ShowInventory()
 
 	for (int i = 0; i < inventorySize; i++)
 	{
-		cout << i << "¹ø¤Š ÀÎº¥Åä¸® ¾ÆÀÌÅÛ" << endl;
+		cout << i << "ë²ˆÂŠ ì¸ë²¤í† ë¦¬ ì•„ì´í…œ" << endl;
 	}
 
 	cout << "--------Inventory--------" << endl;
@@ -34,32 +34,32 @@ void ShowInventory()
 
 void ShowInventory(int index)
 {
-	cout << index << "¹øÂ° ÀÎº¥Åä¸® ¾ÆÀÌÅÛ" << endl;
+	cout << index << "ë²ˆì§¸ ì¸ë²¤í† ë¦¬ ì•„ì´í…œ" << endl;
 	cout << endl;
 }
 
 void ShowInventory(float value)
 {
-	cout << "Àß¸øµÈ µ¥ÀÌÅÍÅ¸ÀÔ ÀÓ·ÂµÊ" << endl;
+	cout << "ìž˜ëª»ëœ ë°ì´í„°íƒ€ìž… ìž„ë ¥ë¨" << endl;
 	cout << endl;
 }
 
 void ShowInventory(char ch)
 {
-	cout << "¹®ÀÚÇü µ¥ÀÌÅÍ Å¸ÀÔ ÀÔ·Â" << endl;
+	cout << "ë¬¸ìží˜• ë°ì´í„° íƒ€ìž… ìž…ë ¥" << endl;
 	cout << endl;
 }
 
 void ShowInventory(bool pro)
 {
-	cout << "Âü ¶Ç´Â °ÅÁþ" << endl;
+	cout << "ì°¸ ë˜ëŠ” ê±°ì§“" << endl;
 	cout << endl;
 }
 
 int main()
 {
-	// ÇÔ¼ö ¿À¹ö·Îµù : ÇÔ¼öÀÇ ÀÌ¸§ÀÌ °°¾Æµµ ¸Å°³º¯¼ö¿¡ µû¶ó ´Ù¾çÇÑ °á°ú°¡ ³ª¿Àµµ·Ï ÇÏ´Â ±â¹ý
-	// ´ÙÇü¼º
+	// í•¨ìˆ˜ ì˜¤ë²„ë¡œë”© : í•¨ìˆ˜ì˜ ì´ë¦„ì´ ê°™ì•„ë„ ë§¤ê°œë³€ìˆ˜ì— ë”°ë¼ ë‹¤ì–‘í•œ ê²°ê³¼ê°€ ë‚˜ì˜¤ë„ë¡ í•˜ëŠ” ê¸°ë²•
+	// ë‹¤í˜•ì„±
 
 	PrintMenu();
 	PrintMenu(2);

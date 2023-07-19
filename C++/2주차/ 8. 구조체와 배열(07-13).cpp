@@ -31,7 +31,7 @@ int main()
 	intArr[0] = num;
 	intArr[0] = 50;
 
-	//À§¿Í ¾Æ·¡´Â µ¿ÀÏÇÔ//
+	//Ã€Â§Â¿Ã Â¾Ã†Â·Â¡Â´Ã‚ ÂµÂ¿Ã€ÃÃ‡Ã”//
 
 	Student studentA;
 	studentA.id = 9999;

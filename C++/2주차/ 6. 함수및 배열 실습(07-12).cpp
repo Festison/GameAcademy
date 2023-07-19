@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-#pragma region °è»ê±â ½Ç½À
+#pragma region ê³„ì‚°ê¸° ì‹¤ìŠµ
 float resultRecord[100][4][100];
 
 int PLUS = 0;
@@ -42,7 +42,7 @@ float Calculator(int numA, int op, int numB)
     //resultRecord[5][0][3] == 0
     if (resultRecord[numA][op][numB] != INIT_VALUE)
     {
-        cout << "ÇÑ¹ø ÀÌ»ó °è»êµÇ¾î ¿¬»ê ¾ÈÇÕ´Ï´Ù." << endl;
+        cout << "í•œë²ˆ ì´ìƒ ê³„ì‚°ë˜ì–´ ì—°ì‚° ì•ˆí•©ë‹ˆë‹¤." << endl;
         return resultRecord[numA][op][numB];
     }
 
@@ -66,7 +66,7 @@ void ExcuteCaculator()
 
     while (true)
     {
-        cout << "½ÄÀ» ÀÔ·ÂÇÏ¼¼¿ä : ";
+        cout << "ì‹ì„ ìž…ë ¥í•˜ì„¸ìš” : ";
         cin >> a;
         cin >> op;
         cin >> b;
@@ -87,7 +87,7 @@ void ExcuteCaculator()
 }
 #pragma endregion
 
-#pragma region ±¸±¸´Ü ½Ç½À
+#pragma region êµ¬êµ¬ë‹¨ ì‹¤ìŠµ
 int gugudan[10][10];
 
 void GugudanInit() 

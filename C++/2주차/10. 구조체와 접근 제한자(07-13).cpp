@@ -1,10 +1,10 @@
 #include<iostream>
 using namespace std;
 
-// ¼Ó¼º°ú ±â´ÉÀÌ °°ÀÌ ÀÖÀ»¶§ °´Ã¼¶óÇÏ¸ç Ä¸½¶È­¸¦ ½ÃÅ²°ÍÀÌ´Ù.
+// ì†ì„±ê³¼ ê¸°ëŠ¥ì´ ê°™ì´ ìˆì„ë•Œ ê°ì²´ë¼í•˜ë©° ìº¡ìŠí™”ë¥¼ ì‹œí‚¨ê²ƒì´ë‹¤.
 struct Student
 {
-	// Á¢±Ù Á¦ÇÑÀÚ¸¦ ÅëÇÑ Á¤º¸Àº´Ğ
+	// ì ‘ê·¼ ì œí•œìë¥¼ í†µí•œ ì •ë³´ì€ë‹‰
 	// public, private
 
 private:
@@ -22,13 +22,13 @@ public:
 
 	void PrintInfo()
 	{
-		cout << "--Á¤º¸Ãâ·Â--" << endl;
+		cout << "--ì •ë³´ì¶œë ¥--" << endl;
 		cout << id << endl;
 		cout << age << endl;
 
 		if (isDead)
 		{
-			cout << "Á×¾úÀ½" << endl;
+			cout << "ì£½ì—ˆìŒ" << endl;
 		}
 		cout << "-----------" << endl;
 	}
@@ -36,7 +36,7 @@ public:
 
 int main()
 {
-	// ÀÎ½ºÅÏ½º È­
+	// ì¸ìŠ¤í„´ìŠ¤ í™”
 	Student stuA;
 	Student stuB;
 

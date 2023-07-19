@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-// ¹è¿­À» ÀÎÀÚ·Î ÇÏ¸é Call By AddressÀÌ±â ¶§¹®¿¡ ¹İÈ¯°ªÀÌ¾ø¾îµµ ¸ŞÀÎÇÔ¼öÀÇ °ªÀÌ ¹Ù²ï´Ù.
+// ë°°ì—´ì„ ì¸ìë¡œ í•˜ë©´ Call By Addressì´ê¸° ë•Œë¬¸ì— ë°˜í™˜ê°’ì´ì—†ì–´ë„ ë©”ì¸í•¨ìˆ˜ì˜ ê°’ì´ ë°”ë€ë‹¤.
 int* MultipleOfNumber(int* array, int num)
 {
 	for (int i = 0; i < 1000; i++)

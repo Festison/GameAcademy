@@ -10,7 +10,7 @@ struct Student
 
 void PrintStudentInfo(Student stu)
 {
-	cout << "---ÇÐ»ý Á¤º¸---" << endl;
+	cout << "---Ã‡ÃÂ»Ã½ ÃÂ¤ÂºÂ¸---" << endl;
 	cout << stu.age << endl;
 	cout << stu.id << endl;
 	cout << "---------------" << endl;

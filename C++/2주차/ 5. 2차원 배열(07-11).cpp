@@ -31,22 +31,22 @@ void InitArr(int arr[2][5], int num)
 }
 int main()
 {
-	// ÀÌÁß¹è¿­Àº ½ÇÁ¦·Î ¸Þ¸ð¸®¿¡ ÀúÀåµÉ ¶§´Â ÀÏÂ÷¿øÀ¸·Î ÀúÀåµÈ´Ù.
+	// ì´ì¤‘ë°°ì—´ì€ ì‹¤ì œë¡œ ë©”ëª¨ë¦¬ì— ì €ìž¥ë  ë•ŒëŠ” ì¼ì°¨ì›ìœ¼ë¡œ ì €ìž¥ëœë‹¤.
 	int arr[2][5];
 	InitArr(arr, -1);
 
 	int arrB[2][5] = { {0,1,2,3,4}, {5,6,7,8,9} };
 
-	// 2Â÷¿ø ¹è¿­ ÀüÃ¼ÀÇ ½ÃÀÛ ÁÖ¼Ò
+	// 2ì°¨ì› ë°°ì—´ ì „ì²´ì˜ ì‹œìž‘ ì£¼ì†Œ
 	cout << arrB << endl;
 
-	// 2Â÷¿ø ¹è¿­ÀÌ±â ‹š¹®¿¡ °ªÀ» ±¸ÇÏ±â À§ÇØ¼­´Â *ÀÌ µÎ°³ ÇÊ¿äÇÏ´Ù.
-	cout << *(*(arrB + 0) + 0) << endl; // arrB[0][0]ÀÇ °ª
-	cout << *(*(arrB + 0) + 1) << endl; // arrB[0][1]ÀÇ °ª
-	cout << *(*(arrB + 1) + 0) << endl; // arrB[1][0]ÀÇ °ª	
-	cout << *arrB << endl;              // arrB[0][0]ÀÇ ÁÖ¼Ò
-	cout << *arrB + 1 << endl;          // arrB[0][1]ÀÇ ÁÖ¼Ò	
-	cout << *(arrB + 1) << endl;        // arrB[1][0]ÀÇ ÁÖ¼Ò
+	// 2ì°¨ì› ë°°ì—´ì´ê¸° Â‹Âšë¬¸ì— ê°’ì„ êµ¬í•˜ê¸° ìœ„í•´ì„œëŠ” *ì´ ë‘ê°œ í•„ìš”í•˜ë‹¤.
+	cout << *(*(arrB + 0) + 0) << endl; // arrB[0][0]ì˜ ê°’
+	cout << *(*(arrB + 0) + 1) << endl; // arrB[0][1]ì˜ ê°’
+	cout << *(*(arrB + 1) + 0) << endl; // arrB[1][0]ì˜ ê°’	
+	cout << *arrB << endl;              // arrB[0][0]ì˜ ì£¼ì†Œ
+	cout << *arrB + 1 << endl;          // arrB[0][1]ì˜ ì£¼ì†Œ	
+	cout << *(arrB + 1) << endl;        // arrB[1][0]ì˜ ì£¼ì†Œ
 
 	int arr[10][10];
 

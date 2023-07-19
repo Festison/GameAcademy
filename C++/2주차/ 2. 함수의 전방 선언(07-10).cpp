@@ -2,7 +2,7 @@
 #include<algorithm>
 using namespace std;
 
-// Àü¹æ ¼±¾ð
+// Ã€Ã¼Â¹Ã¦ Â¼Â±Â¾Ã°
 void Gugudan();
 void Gugudan(int dan);
 int Gugudan(int numA, int numB);

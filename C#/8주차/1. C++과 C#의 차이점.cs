@@ -52,11 +52,12 @@ public class GameManager : MonoBehaviour
         b = temp;
     }
 
-    void Start()   // main 처럼 사용
+    void Start()   
     {
-        //int arr[10]; //C++에서의 배열
+        // C++에서의 배열
+        // int arr[10]; 
 
-        //C#에서의 배열
+        // C#에서의 배열
         // 힙 영역에 할당
         int[] arr = new int[10];
 
@@ -92,7 +93,8 @@ public class GameManager : MonoBehaviour
 
         // 데이터 타입이 구조체로 이루어져 있다. 
         // C#에는 직접적인 포인터의 사용이 없다.
-        // C++의 강력한 기능인 포인터에 대해 사용자의 실수를 방지하기 위해서 없다.
+        // C++의 강력한 기능인 포인터에 대해 사용자의 실수를 방지하기 위해서 직접 사용 하지 않는다.
+        // 포인터는 메모리에 대한 이점을 가진다.
         // Garbage Collector라고 하는 친구가 대신 메모리를 해제해 준다.
 
         int num = 10;
@@ -114,6 +116,9 @@ public class GameManager : MonoBehaviour
 
         Debug.Log(numA);
         Debug.Log(numB);
+
+        // 문자열로 치환 된다.
+        Debug.Log(numA + "," + numB);
 
         // 콜바이 벨류, 콜바이 레퍼런스의 C#
         #endregion

@@ -4,34 +4,30 @@ using UnityEngine;
 
 public class Test : MonoBehaviour
 {
-    // boxcollider´Â Ã³À½¿£ ¾Æ¹«°Íµµ °¡¸®Å°°í ÀÖÁö ¾Ê¾Ò´Ù.
+    // boxcolliderëŠ” ì²˜ìŒì—” ì•„ë¬´ê²ƒë„ ê°€ë¦¬í‚¤ê³  ìˆì§€ ì•Šì•˜ë‹¤.
+    // publicì„ í†µí•´ì„œ ì¸ìŠ¤í™í„°ì°½ì—ì„œ ë“œë˜ê·¸ì•¤ ë“œë ê°€ëŠ¥
     public BoxCollider boxCollider = null;
     public GameObject cube = null;
     public GameObject targetObjFindOfType = null;
 
-
     private void Start()
     {
-        // GetComponent<BoxCollider>()¸¦ ÅëÇØ TestÄÄÆ÷³ÍÆ®°¡ µé¾î°¡ ÀÖ´Â °ÔÀÓ¿ÀºêÁ§Æ®ÀÇ ÄÄÆ÷³ÍÆ®¸¦ °Ë»öÇØ¼­ boxcollider¸¦ °¡Á®¿Í ³Ö¾î Áá´Ù.
+        // GetComponent<BoxCollider>()ë¥¼ í†µí•´ Testì»´í¬ë„ŒíŠ¸ê°€ ë“¤ì–´ê°€ ìˆëŠ” ê²Œì„ì˜¤ë¸Œì íŠ¸ì˜ ì»´í¬ë„ŒíŠ¸ë¥¼ ê²€ìƒ‰í•´ì„œ boxcolliderë¥¼ ê°€ì ¸ì™€ ë„£ì–´ ì¤¬ë‹¤.
         boxCollider = GetComponent<BoxCollider>();
 
-        // ¿¬»ê¾çÀÌ ¸¹¾ÆÁö°í ¶È°°Àº ÀÌ¸§ÀÇ °ÔÀÓ ¿ÀºêÁ§Æ®°¡ ÀÖÀ» ¼ö ÀÖ¾î¼­ »ç¿ëÀ» ÀÚÁ¦
+        // Findë¡œ ì°¾ê¸° : GameObject.Find("ì°¾ê³ ìí•˜ëŠ” ê²Œì„ì˜¤ë¸Œì íŠ¸ ì´ë¦„")
+        // ì—°ì‚°ì–‘ì´ ë§ì•„ì§€ê³  ë˜‘ê°™ì€ ì´ë¦„ì˜ ê²Œì„ ì˜¤ë¸Œì íŠ¸ê°€ ìˆì„ ìˆ˜ ìˆì–´ì„œ ì‚¬ìš©ì„ ìì œ
         cube = GameObject.Find("Cube");
 
-        // ¹Ú½º Äİ¶óÀÌ´õ¸¦ °¡Áö°íÀÖ´Â °ÔÀÓ¿ÀºêÁ§Æ®¸¦ Ã£¾Æ¿Â´Ù.
-        // ¾È¿¡ÀÖ´Â ÄÄÆ÷³ÍÆ®¸¦ ÇÏ³ªÇÏ³ª ÀüºÎ È®ÀÎÇÑ´Ù.
+        // FindObjectOfTypeìœ¼ë¡œ ì°¾ê¸° : FindObjectOfType<ì°¾ê³ ìí•˜ëŠ” ì»´í¬ë„ŒíŠ¸ëª…>();
+        // ë°•ìŠ¤ ì½œë¼ì´ë”ë¥¼ ê°€ì§€ê³ ìˆëŠ” ê²Œì„ì˜¤ë¸Œì íŠ¸ë¥¼ ì°¾ì•„ì˜¨ë‹¤.
+        // ì•ˆì—ìˆëŠ” ì»´í¬ë„ŒíŠ¸ë¥¼ í•˜ë‚˜í•˜ë‚˜ ì „ë¶€ í™•ì¸í•œë‹¤.
         targetObjFindOfType = GameObject.FindObjectOfType<BoxCollider>().gameObject;
-
     }
 
     private void Update()
     {
-        // boxCollider¸¦ ÅëÇØ¼­ °ÔÀÓ¿ÀºêÁ§Æ®¸¦ °¡Á®¿Ã ¼ö ÀÖ´Ù.
+        // boxColliderë¥¼ í†µí•´ì„œ ê²Œì„ì˜¤ë¸Œì íŠ¸ë¥¼ ê°€ì ¸ì˜¬ ìˆ˜ ìˆë‹¤.
         Destroy(boxCollider.gameObject);
     }
-
-
-
-
-
 }

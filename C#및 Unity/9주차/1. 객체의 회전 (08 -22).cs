@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class 1. °´Ã¼ÀÇ È¸Àü : MonoBehaviour
+public class 1. ê°ì²´ì˜ íšŒì „ : MonoBehaviour
 { 
-    // °´Ã¼ÀÇ È¸Àü
-    // Rotate(È¸ÀüÇÏ°íÀÚÇÏ´Â Ãà, È¸ÀüÇÒ ¾Ş±Û°ª, Space.Self´Â ·ÎÄÃ ÁÂÇ¥°è (ÀÚ½ÅÀ» ±âÁØÀ¸·Î) , Space.World´Â ¿ùµå ÁÂÇ¥°è (¼¼»óÀ» ±âÁØÀ¸·Î))
+    // ê°ì²´ì˜ íšŒì „
+    // Rotate(íšŒì „í•˜ê³ ìí•˜ëŠ” ì¶•, íšŒì „í•  ì•µê¸€ê°’, Space.SelfëŠ” ë¡œì»¬ ì¢Œí‘œê³„ (ìì‹ ì„ ê¸°ì¤€ìœ¼ë¡œ) , Space.WorldëŠ” ì›”ë“œ ì¢Œí‘œê³„ (ì„¸ìƒì„ ê¸°ì¤€ìœ¼ë¡œ))
 
     void Update()
     {
@@ -13,7 +13,7 @@ public class 1. °´Ã¼ÀÇ È¸Àü : MonoBehaviour
         {
             transform.Rotate(Vector3.up, -1, Space.Self);
         }
-        if (Input.GetKey(KeyCode.Q)
+        if (Input.GetKey(KeyCode.E)
         {
             transform.Rotate(Vector3.up, 1, Space.Self);
         }

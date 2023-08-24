@@ -14,12 +14,12 @@ public class Playervelocity : MonoBehaviour
 
     void Update()
     {
-        // FPS(Frame For Second) 1ÃÊµ¿¾È º¸¿©Áö´Â ÇÁ·¹ÀÓ ¼ö
-        // 144fps ´Â 1ÃÊ¿¡ 144ÀåÀÇ È­¸éÀ» º¸¿©ÁÜ
-        // 60fps ´Â 1ÃÊ¿¡ 60ÀåÀÇ È­¸éÀ» º¸¿©ÁÜ
-        // 10fps ´Â 1ÃÊ¿¡ 10ÀåÀÇ È­¸éÀ» º¸¿©ÁÜ
-        // ÄÄÇ»ÅÍÀÇ ¼º´ÉÀÌ ÁÁÀ¸¸é ÇöÀç ÇÁ·¹ÀÓ°ú ÀÌÀü ÇÁ·¹ÀÓÀÇ ½Ã°£ Â÷ÀÌ°¡ ´õ Àû¾îÁø´Ù.
-        // deltaTimeÀ» ÀÌ¿ëÇØ ÄÄÇ»ÅÍÀÇ ¼º´ÉÀÌ ´Ù¸£´õ¶óµµ ¼Óµµ¸¦ °°°Ô ÇÑ´Ù.
+        // FPS(Frame For Second) 1ì´ˆë™ì•ˆ ë³´ì—¬ì§€ëŠ” í”„ë ˆìž„ ìˆ˜
+        // 144fps ëŠ” 1ì´ˆì— 144ìž¥ì˜ í™”ë©´ì„ ë³´ì—¬ì¤Œ
+        // 60fps ëŠ” 1ì´ˆì— 60ìž¥ì˜ í™”ë©´ì„ ë³´ì—¬ì¤Œ
+        // 10fps ëŠ” 1ì´ˆì— 10ìž¥ì˜ í™”ë©´ì„ ë³´ì—¬ì¤Œ
+        // ì»´í“¨í„°ì˜ ì„±ëŠ¥ì´ ì¢‹ìœ¼ë©´ í˜„ìž¬ í”„ë ˆìž„ê³¼ ì´ì „ í”„ë ˆìž„ì˜ ì‹œê°„ ì°¨ì´ê°€ ë” ì ì–´ì§„ë‹¤.
+        // deltaTimeì„ ì´ìš©í•´ ì»´í“¨í„°ì˜ ì„±ëŠ¥ì´ ë‹¤ë¥´ë”ë¼ë„ ì†ë„ë¥¼ ê°™ê²Œ í•œë‹¤.
 
         //if (Input.GetKey(KeyCode.A))
         //{
@@ -58,15 +58,16 @@ public class Playervelocity : MonoBehaviour
             vec += new Vector3(0, -1, 0);
         }
 
-        // vec.normalized ´Â º¤ÅÍÀÇ ¹æÇâ¼ºÀº ³ÀµÎ°í ±æÀÌ¸¦ 1 ·Î ¸¸µé¾îÁØ´Ù.
-        // nomalized¸¦ ÀÌ¿ëÇÏ¸é ¾î¶² °¢µµ·Î ÀÌµ¿ÇØµµ °°Àº ¼Óµµ·Î ÀÌµ¿ÇÑ´Ù.
-        // ¿ÀºêÁ§Æ® ±ÕÀÏÇÑ ÀÌµ¿À» À§ÇÏ¿© º¤ÅÍÀÇ Á¤±ÔÈ­°¡ ÇÊ¿äÇÏ´Ù.
+        // vec.normalized ëŠ” ë²¡í„°ì˜ ë°©í–¥ì„±ì€ ëƒ…ë‘ê³  ê¸¸ì´ë¥¼ 1 ë¡œ ë§Œë“¤ì–´ì¤€ë‹¤.
+        // nomalizedë¥¼ ì´ìš©í•˜ë©´ ì–´ë–¤ ê°ë„ë¡œ ì´ë™í•´ë„ ê°™ì€ ì†ë„ë¡œ ì´ë™í•œë‹¤.
+        // ì˜¤ë¸Œì íŠ¸ ê· ì¼í•œ ì´ë™ì„ ìœ„í•˜ì—¬ ë²¡í„°ì˜ ì •ê·œí™”ê°€ í•„ìš”í•˜ë‹¤.
         vec = vec.normalized * speed;
 
-        // velocity¸¦ »ç¿ëÇØ ¼Óµµ¸¦ Á¦¾îÇÏ¸é Ãæµ¹ÀÌ ¸ÕÀú ÀÏ¾î³­´Ù.   
-        // RigidbodyÀÇ velocity(¼Óµµ)ÀÚÃ¼¸¦ º¯°æ½ÃÅ³ ¼ö ÀÖ´Ù.
-        // TransformÀÇ positionÀ» Á÷Á¢ º¯°æÇÏ´Â°ÍÀÌ ¾Æ´Ï¶ó¼­
-        // ¹°¸®ÀûÀÎ ¿µ¿ª¿¡¼­ÀÇ ¼Óµµ¸¦ ÅëÇÑ ÀÌµ¿ÀÌ ÀÏ¾î³ª±â ‹š¹®¿¡, »¡¶óÁ®µµ º®À» Åë°úÇÏÁö ¾Ê´Â´Ù.
+        // velocityë¥¼ ì‚¬ìš©í•´ ì†ë„ë¥¼ ì œì–´í•˜ë©´ ì¶©ëŒì´ ë¨¼ì € ì¼ì–´ë‚œë‹¤.   
+        // velocityëŠ” ì¼ì •í•œ ì†ë„ë¥¼ ì£¼ê¸° ë•Œë¬¸ì— deltaTimeì´ í•„ìš”ì—†ë‹¤.
+        // Rigidbodyì˜ velocity(ì†ë„)ìžì²´ë¥¼ ë³€ê²½ì‹œí‚¬ ìˆ˜ ìžˆë‹¤.
+        // Transformì˜ positionì„ ì§ì ‘ ë³€ê²½í•˜ëŠ”ê²ƒì´ ì•„ë‹ˆë¼ì„œ
+        // ë¬¼ë¦¬ì ì¸ ì˜ì—­ì—ì„œì˜ ì†ë„ë¥¼ í†µí•œ ì´ë™ì´ ì¼ì–´ë‚˜ê¸° Â‹Âšë¬¸ì—, ë¹¨ë¼ì ¸ë„ ë²½ì„ í†µê³¼í•˜ì§€ ì•ŠëŠ”ë‹¤.
         rigidbody.velocity = vec;
     }
 }

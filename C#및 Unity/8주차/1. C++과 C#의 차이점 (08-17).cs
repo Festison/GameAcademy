@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour
         #region 1. C#과 C++의 차이점
         // C#과 C++의 차이점
 
-        // bool 타입에 정수형 1은 C#에서 을 수 없다.
+        // bool 타입에 정수형 1은 C#에서 사용 할 수 없다.
         // 오로지 true나 false만 가능, 즉 기준이 엄격해 졌다.
         // bool isCheck = 1; 불가능
 

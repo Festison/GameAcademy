@@ -61,6 +61,7 @@ public class Playervelocity : MonoBehaviour
         // vec.normalized 는 벡터의 방향성은 냅두고 길이를 1 로 만들어준다.
         // nomalized를 이용하면 어떤 각도로 이동해도 같은 속도로 이동한다.
         // 오브젝트 균일한 이동을 위하여 벡터의 정규화가 필요하다.
+        // nomalized 후 speed를 곱해 자기가 원하는 속도로 맞춰 줄수 있다.
         vec = vec.normalized * speed;
 
         // velocity를 사용해 속도를 제어하면 충돌이 먼저 일어난다.   

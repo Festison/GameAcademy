@@ -20,14 +20,15 @@ public class PlayerRigidbody : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            // ¸®Áöµå¹ÙµðÀÇ AddForce´Â º¤ÅÍÀÇ ¹æÇâ°ú Å©±â·Î ÈûÀ» °¡ÇØÁÖ´Â ÇÔ¼ö
-            // ±×³É AddForce´Â ¿ùµå ÁÂÇ¥°è ±âÁØ
-            // ForceMode.Impulse : ¿ÀºêÁ§Æ®ÀÇ Áú·®À» ÀÌ¿ëÇØ ¼ø°£ÀûÀÎ ÈûÀ» °¡ÇÑ´Ù.
-
+            // ë¦¬ì§€ë“œë°”ë””ì˜ AddForceëŠ” ë²¡í„°ì˜ ë°©í–¥ê³¼ í¬ê¸°ë¡œ íž˜ì„ ê°€í•´ì£¼ëŠ” í•¨ìˆ˜
+            // ê·¸ëƒ¥ AddForceëŠ” ì›”ë“œ ì¢Œí‘œê³„ ê¸°ì¤€
+            // ForceMode.Impulse : ì˜¤ë¸Œì íŠ¸ì˜ ì§ˆëŸ‰ì„ ì´ìš©í•´ ìˆœê°„ì ì¸ íž˜ì„ ê°€í•œë‹¤.
+            
+            // velocityë¥¼ zeroë¡œ ì´ˆê¸°í™”ì‹œì¼œì„œ ì¤‘ë ¥ì˜ íž˜ì„ ì—†ì•¤ë‹¤.
             rigidbody.velocity = Vector3.zero;
             rigidbody.AddForce(new Vector3(0,3,3), ForceMode.Impulse);
 
-            // AddRelativeForce´Â ·ÎÄÃ ÁÂÇ¥°è ±âÁØ
+            // AddRelativeForceëŠ” ë¡œì»¬ ì¢Œí‘œê³„ ê¸°ì¤€
             // rigidbody.AddRelativeForce(Vector3.right * 1, ForceMode.Impulse);
         }
 

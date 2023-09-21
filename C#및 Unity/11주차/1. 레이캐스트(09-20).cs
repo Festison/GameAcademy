@@ -24,12 +24,10 @@ public class RayCast : MonoBehaviour
         }
     }
 
-    // inÅ°¿öµå : °ªÀ» ¹Ù²ÙÁö ¸¶¶ó,  outÅ°¿öµå : °ªÀ» ¹Ù²ã¶ó
     private void Update()
     {
-        // ·¹ÀÌ Ä³½ºÆ®
         RaycastHit hit;
-        isGround = Physics.Raycast(transform.position, -transform.up, out hit, maxDistance, (1 << 7 | 1 << 6)); // 7¹ø¤Š ·¹ÀÌ¾î¶û 6¹ø¤Š ·¹ÀÌ¾î °ËÃâ
+        isGround = Physics.Raycast(transform.position, -transform.up, out hit, maxDistance, (1 << 7 | 1 << 6));
         Debug.DrawLine(transform.position, transform.position + (-transform.up * maxDistance), Color.red);
         isJumpable = isGround;
 

@@ -9,9 +9,13 @@ public class Generic : MonoBehaviour
 
     // 가변 배열 : 크기가 변하는 배열
     // List<T>
+
+    // 동적 할당을 해줘야 배열에 데이터를 집어 넣을 수 있다.
     List<int> intList = new List<int>();
     ArrayList arrayList = new ArrayList();
 
+    // 큐와 스택은 논 제너릭 상태로 사용하면 오브젝트 타입을 가진다.
+    Queue queue = new Queue();
     Queue<int> intQueue = new Queue<int>();
     Stack<int> intStack = new Stack<int>();
 
@@ -53,7 +57,5 @@ public class Generic : MonoBehaviour
         {
             Debug.Log(value);
         }
-
     }
-
 }

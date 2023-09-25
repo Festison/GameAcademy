@@ -24,27 +24,30 @@ public class RayCast : MonoBehaviour
         }
     }
 
+    // in키워드 : 값을 바꾸지 마라,  out키워드 : 값을 바꿔라
     private void Update()
     {
+        // 레이 캐스트
         RaycastHit hit;
-        isGround = Physics.Raycast(transform.position, -transform.up, out hit, maxDistance, (1 << 7 | 1 << 6));
+        isGround = Physics.Raycast(transform.position, -transform.up, out hit, maxDistance, (1 << 7 | 1 << 6)); // 7번쨰 레이어랑 6번쨰 레이어 검출
         Debug.DrawLine(transform.position, transform.position + (-transform.up * maxDistance), Color.red);
         isJumpable = isGround;
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
         }
-        Debug.Log(hit.collider.name);
 
         if (Input.GetKey(KeyCode.V))
         {
             RaycastHit enemyHit;
-            Debug.DrawLine(transform.position, transform.position + (-transform.up * maxDistance), Color.blue);
+            Debug.DrawLine(transform.position, transform.position + (transform.forward * maxDistance) , Color.blue);
             if (Physics.Raycast(transform.position, transform.forward, out enemyHit, maxDistance))
             {
+                // 몬스터가 null이 아닐시
                 if (enemyHit.collider.GetComponent<Monster>() != null)
                 {
+                    // 레이캐스트에 맞은 게임오브젝트에 접근
                     enemyHit.collider.gameObject.GetComponent<Monster>().Hp -= 10;
                 }
             }

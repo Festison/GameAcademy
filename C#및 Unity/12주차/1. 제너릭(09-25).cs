@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Generic : MonoBehaviour
 {
-    // Á¤Àû ¹è¿­ : Å©±â°¡ Á¤ÇØÁø ¹è¿­
+    // ì •ì  ë°°ì—´ : í¬ê¸°ê°€ ì •í•´ì§„ ë°°ì—´
     int[] intArray = new int[5];
 
-    // °¡º¯ ¹è¿­ : Å©±â°¡ º¯ÇÏ´Â ¹è¿­
+    // ê°€ë³€ ë°°ì—´ : í¬ê¸°ê°€ ë³€í•˜ëŠ” ë°°ì—´
     // List<T>
     List<int> intList = new List<int>();
     ArrayList arrayList = new ArrayList();
@@ -17,38 +17,38 @@ public class Generic : MonoBehaviour
 
     Dictionary<int, string> textDic = new Dictionary<int, string>();
 
-    // ³í Á¦³Ê¸¯ µñ¼Å³Ê¸® ¿ÀºêÁ§Æ® Å¸ÀÔÀ¸·Î ÀÌ·ç¾îÁ® ÀÖ´Ù.
+    // ë…¼ ì œë„ˆë¦­ ë”•ì…”ë„ˆë¦¬ ì˜¤ë¸Œì íŠ¸ íƒ€ì…ìœ¼ë¡œ ì´ë£¨ì–´ì ¸ ìˆë‹¤.
     Hashtable hashtable = new Hashtable();
 
     private void Start()
     {
         int num = 10;
 
-        // °ª Å¸ÀÔÀ» ÂüÁ¶ Å¸ÀÔÀ¸·Î º¯°æ objectÀÇ ÇüÅÂ·Î Çüº¯È¯(¹Ú½Ì)  - ¸í½ÃÀûÀ¸·Î ÇØÁÖÁö¾Ê¾ÆµµµÊ
+        // ê°’ íƒ€ì…ì„ ì°¸ì¡° íƒ€ì…ìœ¼ë¡œ ë³€ê²½ objectì˜ í˜•íƒœë¡œ í˜•ë³€í™˜(ë°•ì‹±)  - ëª…ì‹œì ìœ¼ë¡œ í•´ì£¼ì§€ì•Šì•„ë„ë¨
         object obj = (object)num;
-        // ÂüÁ¶ Å¸ÀÔÀ» °ª Å¸ÀÔÀ¸·Î º¯°æ objectÀÇ ÇüÅÂ¿¡¼­ ¿ø·¡ÇüÅÂ·Î Çüº¯È¯(¾ğ¹Ú½Ì) - ¸í½ÃÀûÀ¸·Î ÇØÁà¾ßÇÔ.
+        // ì°¸ì¡° íƒ€ì…ì„ ê°’ íƒ€ì…ìœ¼ë¡œ ë³€ê²½ objectì˜ í˜•íƒœì—ì„œ ì›ë˜í˜•íƒœë¡œ í˜•ë³€í™˜(ì–¸ë°•ì‹±) - ëª…ì‹œì ìœ¼ë¡œ í•´ì¤˜ì•¼í•¨.
         int numB = 10 + (int)obj;
 
         for (int i = 0; i < 10; i++)
         {
             int inputValue = i * 10;
 
-            // List¿¡ µ¥ÀÌÅÍ »ğÀÔ Add
+            // Listì— ë°ì´í„° ì‚½ì… Add
             intList.Add(inputValue);
-            // Queue¿¡ µ¥ÀÌÅÍ »ğÀÔ Enqueue
+            // Queueì— ë°ì´í„° ì‚½ì… Enqueue
             intQueue.Enqueue(inputValue);
-            // Stack¿¡ µ¥ÀÌÅÍ »ğÀÔ Push
+            // Stackì— ë°ì´í„° ì‚½ì… Push
             intStack.Push(inputValue);
         }
 
-        // List¿¡¼­ µ¥ÀÌÅÍ ÃßÃâ
+        // Listì—ì„œ ë°ì´í„° ì¶”ì¶œ
         Debug.Log(intList[0]);
-        // Queue¿¡¼­ µ¥ÀÌÅÍ ÃßÃâ Dequeue
+        // Queueì—ì„œ ë°ì´í„° ì¶”ì¶œ Dequeue
         Debug.Log(intQueue.Dequeue());
-        // Stack¿¡¼­ µ¥ÀÌÅÍ ÃßÃâ Pop
+        // Stackì—ì„œ ë°ì´í„° ì¶”ì¶œ Pop
         Debug.Log(intStack.Pop());
 
-        // ¿øÇÏ´Â ÀÚ·á±¸Á¶¸¦ ´ã°í ±× °ªÀ» value¿¡ ³Ö¾î ÁØ´Ù.
+        // ì›í•˜ëŠ” ìë£Œêµ¬ì¡°ë¥¼ ë‹´ê³  ê·¸ ê°’ì„ valueì— ë„£ì–´ ì¤€ë‹¤.
         foreach (int value in intList)
         {
             Debug.Log(value);

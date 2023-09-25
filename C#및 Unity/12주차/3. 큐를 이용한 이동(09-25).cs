@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// ¿ÀºêÁ§Æ®ÀÇ À§Ä¡¸¦ ±â¾ïÇØ ±× Àå¼Ò·Î µû¶ó°¨
+// ì˜¤ë¸Œì íŠ¸ì˜ ìœ„ì¹˜ë¥¼ ê¸°ì–µí•´ ê·¸ ì¥ì†Œë¡œ ë”°ë¼ê°
 public class queue : MonoBehaviour
 {
     Queue<Vector3> Queue = new Queue<Vector3>();

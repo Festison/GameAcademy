@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // 싱글턴 패턴 : 메모리측면 및 데이터 공유의 이점을 위해 객체의 인스턴스가 오직 1개만 생성되게하는 패턴이다.
+// 유니티에서는 씬전환을 통해 새로운 데이터를 불러오기 떄문에 기존에 있던 데이터가 하나만 존재하도록 싱글턴 패턴을 이용한다.
 // 싱글턴 패턴을 여러가지 매니저에 상속해주기 위해서 제네릭 사용
 // where을 사용해 싱글톤을 상속받는 클래스만 T타입에 들어갈 수 있다는 제한사항을 걸어줍니다.
 public class SingleTon<T> : MonoBehaviour where T : SingleTon<T>

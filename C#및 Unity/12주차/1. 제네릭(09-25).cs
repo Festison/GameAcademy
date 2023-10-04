@@ -18,14 +18,17 @@ public class Generic : MonoBehaviour
     Queue queue = new Queue();
     Queue<int> intQueue = new Queue<int>();
     Stack<int> intStack = new Stack<int>();
-
-    Dictionary<int, string> textDic = new Dictionary<int, string>();
+    
+    Dictionary<string, Color> colorDic = new Dictionary<string, Color>();
 
     // 논 제너릭 딕셔너리 오브젝트 타입으로 이루어져 있다.
     Hashtable hashtable = new Hashtable();
 
     private void Start()
     {
+        // 키와 갚이 쌍으로 이루어진 딕셔너리 Red라는 키를 입력시 갚 Color(1,0,0)이 나온다.
+        colorDic.Add("Red", new Color(1, 0, 0));
+        
         int num = 10;
 
         // 값 타입을 참조 타입으로 변경 object의 형태로 형변환(박싱)  - 명시적으로 해주지않아도됨

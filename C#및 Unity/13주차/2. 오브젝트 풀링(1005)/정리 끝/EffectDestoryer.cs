@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EffectDestoryer : MonoBehaviour 
+public class EffectDestoryer : MonoBehaviour
 {
     public float DestroyTime = 5;
 
-	void Start () 
+    void Start()
     {
         StartCoroutine(EffectDestroy());
-	}
+    }
 
     IEnumerator EffectDestroy()
     {

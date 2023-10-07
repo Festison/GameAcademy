@@ -6,8 +6,8 @@ public class AnimController : MonoBehaviour
 {
     public PlayerController playerAnimation;
 
-    void Start ()
-    { 
+    void Start()
+    {
         playerAnimation = this.transform.root.transform.GetComponent<PlayerController>();
     }
 

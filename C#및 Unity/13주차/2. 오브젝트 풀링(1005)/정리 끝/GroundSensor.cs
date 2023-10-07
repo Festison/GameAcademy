@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GroundSensor : MonoBehaviour 
+public class GroundSensor : MonoBehaviour
 {
     public PlayerController player;
 
     void Start()
     {
-        player = this.transform.root.GetComponent<PlayerController>();       
+        player = this.transform.root.GetComponent<PlayerController>();
     }
 
     void OnTriggerStay2D(Collider2D other)
@@ -28,7 +28,7 @@ public class GroundSensor : MonoBehaviour
             {
                 player.IsGrounded = true;
                 player.currentJumpCount = 0;
-            }         
+            }
         }
     }
 

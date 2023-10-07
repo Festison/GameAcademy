@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class weaponColliderEventSender : MonoBehaviour 
+public class weaponColliderEventSender : MonoBehaviour
 {
     public enum Type
     {
@@ -11,7 +11,7 @@ public class weaponColliderEventSender : MonoBehaviour
         Player
     }
 
-    public  enum AttackState
+    public enum AttackState
     {
         Default,
         Skill1,
@@ -33,7 +33,7 @@ public class weaponColliderEventSender : MonoBehaviour
         switch (CharacterType)
         {
             case Type.Mons:
-                monsterRoot = this.transform.root.transform.GetComponent<Mon_Bass>();        
+                monsterRoot = this.transform.root.transform.GetComponent<Mon_Bass>();
                 break;
             case Type.Player:
                 playerRoot = this.transform.root.transform.GetComponent<PlayerController>();
@@ -43,7 +43,7 @@ public class weaponColliderEventSender : MonoBehaviour
 
     void OnEnable()
     {
-        if(HittedObjectList.Count>0)
+        if (HittedObjectList.Count > 0)
         {
             HittedObjectList.Clear();
         }
@@ -100,5 +100,5 @@ public class weaponColliderEventSender : MonoBehaviour
                 }
                 break;
         }
-    }  
+    }
 }

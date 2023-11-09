@@ -7,7 +7,7 @@ public class DelegateChain : MonoBehaviour
 {
     public Action customDel = null;
 
-    // delegateChainÀ» ÅëÇØ¼­ ¼¼°³ÀÇ ÇÔ¼ö¸¦ µ¿½Ã¿¡ È£Ãâ
+    // delegateChainì„ í†µí•´ì„œ ì„¸ê°œì˜ í•¨ìˆ˜ë¥¼ ë™ì‹œì— í˜¸ì¶œ
     private void Start()
     {
         customDel += FooOne;

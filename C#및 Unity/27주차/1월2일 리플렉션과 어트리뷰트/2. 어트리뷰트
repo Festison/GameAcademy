@@ -1,1 +1,60 @@
 
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System.Reflection;
+using System;
+
+// 어트리 뷰트
+// Attribute
+public class MInfoAttribute : Attribute
+{
+    public string developerName;
+    public string date;
+    public string body;
+
+    public MInfoAttribute(string developerName, string date)
+    {
+        this.developerName = developerName;
+        this.date = date;
+    }
+
+}
+
+
+public class AttributePractice : MonoBehaviour
+{
+    [MInfo("TEMP", "2024-01-02")]
+    private int score;
+    [MInfo("TEMP", "2024-01-02")]
+    private int value;
+    [MInfo("DEV1", "2024-01-02")]
+
+
+    private void Start()
+    {
+        DeveloperLog("DEV1");
+    }
+
+    public void DeveloperLog(string name)
+    {
+        Type type = typeof(GameManager);
+
+        FieldInfo[] fInfos = type.GetFields(BindingFlags.NonPublic | BindingFlags.Instance);
+        foreach (FieldInfo fInfo in fInfos)
+        {
+            MInfoAttribute mInfoAttribute = fInfo.GetCustomAttribute<MInfoAttribute>();
+            if (mInfoAttribute != null)
+            {
+                if (mInfoAttribute.developerName.Contains(name) == false)
+                    continue;
+
+                Debug.Log(fInfo.Name);
+                Debug.Log("개발자 이름 : " + mInfoAttribute.developerName);
+                Debug.Log("수정 날짜 : " + mInfoAttribute.date);
+            }
+        }
+    }
+
+
+}

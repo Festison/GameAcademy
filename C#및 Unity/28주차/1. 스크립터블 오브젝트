@@ -1,1 +1,54 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System;
 
+// 1. 스크립터블 오브젝트는 에셋의 인스턴스를 가리키는 참조를 저장해놓고 사용하면 메모리 사용량을 줄일 수 있습니다. 
+// 매번 사용할 때 오브젝트의 모든 값을 복사 하지 않으므로 메모리 사용량이 늘지 않습니다. 
+// 2. pluggable (착탈식) 데이터 집합을 미리 정의합니다.
+
+[CreateAssetMenu]
+public class Status : ScriptableObject, ISerializationCallbackReceiver
+{
+    public event Action OnChange;
+    [SerializeField] private float hp;
+    [SerializeField] private float mp;
+    [SerializeField] private float atk;
+    public Sprite sprite;
+    public string sName;
+
+    public float Hp
+    {
+        get { return hp; }
+        set { hp = value;
+            OnChange();
+        }
+    }
+    public float Mp
+    {
+        get { return mp; }
+        set { mp = value;
+            OnChange();
+        }
+    }
+    public float Atk
+    {
+        get => atk;
+        set { atk = value;
+            OnChange();
+        }
+
+    }
+
+    public void OnBeforeSerialize()
+    {
+        hp = 100;
+        mp = 100;
+        atk = 30;
+    }
+
+    public void OnAfterDeserialize()
+    {
+        
+    }
+}

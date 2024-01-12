@@ -1,1 +1,72 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Text;
+using TMPro;
+using UnityEngine;
 
+public class Conversation
+{
+    private int spriteId;
+    private string name;
+    private string contents;
+
+    public Conversation(int spriteId, string name, string contents)
+    {
+        this.spriteId = spriteId;
+        this.name = name;
+        this.contents = contents;
+    }
+
+    public void Show()
+    {
+        Debug.Log(name + " : " + contents);
+    }
+}
+
+public class CSVParser
+{
+    public static List<string[]> Parse(string path)
+    {
+        List<string[]> valuesList = new List<string[]>();
+        TextAsset loadData = Resources.Load<TextAsset>(path);              // CSV데이터를 텍스트에셋으로 만들어 가져옴
+        string allText = loadData.text;
+        string[] lines = allText.Split('\n');
+
+        for(int i=1;i<lines.Length; i++)
+        {
+            string[] values = lines[i].Split(',');
+            if (lines[i] == "") 
+                continue;
+
+            //values[0]//1  value[1]//유저A  value[2]//안녕
+            valuesList.Add(values);
+        }
+        return valuesList;
+    }
+}
+
+public class CSVParsing : MonoBehaviour
+{
+    string path = "conversationCSV";
+
+    List<Conversation> conversationList;
+
+    void Start()
+    {
+        conversationList = new List<Conversation>();
+        List<string[]> valuesList = CSVParser.Parse(path);
+        
+        foreach(var values in valuesList)
+            conversationList.Add(new Conversation(int.Parse(values[0]), values[1], values[2]));
+      
+    }
+
+    int i = 0;
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            conversationList[i++].Show();
+        }
+    }
+}

@@ -1,0 +1,77 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using static UnityEditor.ObjectChangeEventStream;
+
+
+public class Person
+{
+    public static int totalPersonNumber = 0 ;
+    public static PersonBuilder GetBuilder()
+    {
+        return new PersonBuilder();
+    }
+    
+    public int id;
+    public bool isDie;
+
+    public string name;
+    public int age;
+    public float weight;
+
+    public Person()
+    {
+        totalPersonNumber++;
+        id = totalPersonNumber;
+        isDie = false;
+    }
+   
+}
+
+public class PersonBuilder
+{
+    public string name;
+    public int age;
+    public float weight;
+
+    public PersonBuilder Name(string name)
+    {
+        this.name = name;
+        return this;
+    }
+    public PersonBuilder Age(int age)
+    {
+        this.age = age;
+        return this;
+    }
+    public PersonBuilder Weight(float weight)
+    {
+        this.weight = weight;
+        return this;
+    }
+    public Person Build()
+    {
+        Person person = new Person();
+        person.name = name;
+        person.age = age;
+        person.weight = weight;
+        return person;
+    }
+}
+
+public class GameManager : MonoBehaviour
+{
+    Person person;
+    PersonBuilder 임감자Builer;
+    // Start is called before the first frame update
+    void Start()
+    {
+        임감자Builer = Person.GetBuilder().Name("임감자")
+                                    .Age(10);
+
+        person = 임감자Builer.Build();
+        Person personTwo = 임감자Builer.Build();
+
+        Debug.Log(person.name);
+    }
+}

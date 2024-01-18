@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEditor.ObjectChangeEventStream;
 
-
 public class Person
 {
     public static int totalPersonNumber = 0 ;
@@ -25,7 +24,6 @@ public class Person
         id = totalPersonNumber;
         isDie = false;
     }
-   
 }
 
 public class PersonBuilder
@@ -62,15 +60,15 @@ public class PersonBuilder
 public class GameManager : MonoBehaviour
 {
     Person person;
-    PersonBuilder 임감자Builer;
-    // Start is called before the first frame update
+    PersonBuilder builer;
+
     void Start()
     {
-        임감자Builer = Person.GetBuilder().Name("임감자")
+        builer = Person.GetBuilder().Name("임감자")
                                     .Age(10);
 
-        person = 임감자Builer.Build();
-        Person personTwo = 임감자Builer.Build();
+        person = builer.Build();
+        Person personTwo = builer.Build();
 
         Debug.Log(person.name);
     }

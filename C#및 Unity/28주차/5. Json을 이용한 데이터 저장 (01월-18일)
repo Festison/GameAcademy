@@ -1,0 +1,91 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System;
+using System.IO;
+
+[Serializable]
+public class PlayerStat
+{
+    public int hp;
+    public int mp;
+}
+
+[Serializable]
+public class Player
+{
+    public int id;
+    public string name;
+    public PlayerStat stat;
+
+    public void Die()
+    {
+
+    }
+}
+
+public class JsonTester : MonoBehaviour
+{
+    public Player player;
+
+    string path = "Assets/";
+    string fileName = "SaveData.txt";
+
+
+    void Start()
+    {
+        player = new Player();
+        player.stat = new PlayerStat();
+        Init();
+        Debug.Log(player.name);
+    }
+    public void Init()
+    {
+        player.stat.hp = 100;
+        player.id = 1;
+        Debug.Log("d");
+        player.name = "Hero";
+    }
+
+
+    public void SaveData()
+    {
+        StreamWriter sw;
+
+        //Assets/SaveData.txt
+        if (File.Exists(path + fileName) == false)
+            sw = File.CreateText(path + fileName);
+        else
+            sw = new StreamWriter(path + fileName);
+
+        sw.Write(JsonUtility.ToJson(player));
+        sw.Close();
+    }
+
+    public void LoadData()
+    {
+        if(File.Exists(path + fileName))
+        {
+            StreamReader sr = new StreamReader(path + fileName);
+            player = JsonUtility.FromJson<Player>(sr.ReadToEnd());
+            sr.Close();
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+            player.stat.hp -= 10;
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            Debug.Log("저장");
+            SaveData();
+        }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            Debug.Log("불러오기");
+            LoadData();
+        }
+    }
+
+}

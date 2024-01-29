@@ -1,0 +1,59 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System;
+using UnityEngine.Networking;
+
+public class Routine : MonoBehaviour
+{
+    // 런타임 상수라 readonly 사용 
+    readonly WaitForSeconds delay = new WaitForSeconds(1f);
+    public int speed;
+
+    // 메인 루틴 : 유니티 라이프 사이클에서 지원하는 중요한 함수
+    void Start()
+    {
+        Func();
+        StartCoroutine(FuncCo());   // Co-Routine : Cooperation 협동하는 루틴
+    }
+
+    // 서브 루틴 : 사용자 지정함수
+    void Func()
+    {
+
+    }
+
+    // 라이프 사이클에 의거해 호출
+    // ref, out, in 키워드 사용 불가, 매개변수는 사용 가능
+    // 코루틴은 해당 GameObject가 비활성화일때 동작하지 않는다.
+    // 정지 된 코루틴은 다시 GameObject가 활성화 되더라도 다시 동작하지 않는다.(다시 실행을 시켜주어야한다.)
+    IEnumerator FuncCo()
+    {
+        yield return null; // 한 프레임의 deltaTime만큼 대기 시작 시간과 끝 시간이 있을시 시간에 대한 로직에 용이
+
+        yield return delay; // 계속 new를 할시 새로운 공간이 할당 GC를 최적화 하기 위해선 캐싱 필요
+
+        yield return new WaitForSecondsRealtime(1f); // TimeScale의 영향을 받지 않는다. 현실 시간의 영향을 받는다.
+
+        yield return new WaitUntil(() => speed < 5f);  // 델리게이트의 조건이 true에서 false가 될시 작동
+    }
+
+    // 코루틴과 인보크의 차이점 
+    // 코루틴은 GameObject가 활성화 일때만 동작, 인보크는 파괴 전 까지 동작
+    // 코루틴은 매개변수 전달 가능, Invoke는 불가능
+    // 리플렉션의 차이로 코루틴의 속도가 조금 더 빠르다.
+
+    // 코루틴을 이용한 서버 데이터 가져오기
+    IEnumerator ServerDataCo()
+    {
+        UnityWebRequest request = UnityWebRequest.Get("www.google.co.kr");
+        yield return request.SendWebRequest();
+
+        if (request.result != UnityWebRequest.Result.Success)
+            yield break;
+
+        DateTime dateTime = Convert.ToDateTime(request.GetResponseHeader("date"));
+        print(dateTime);
+    }
+
+}

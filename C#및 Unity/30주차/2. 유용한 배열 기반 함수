@@ -1,0 +1,57 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System;
+
+public class Item
+{
+    public int code;
+    public string name;
+
+    public Item(int code, string name)
+    {
+        this.code = code;
+        this.name = name;
+    }
+
+    public void Print()
+    {
+        Debug.Log(code);
+    }
+}
+public class Collections : MonoBehaviour
+{
+    Item[] items = new Item[]
+    {
+        new Item(3, "carrot"),
+        new Item(2, "banana")
+    };
+
+    List<Item> listitems = new List<Item>()
+    {
+        new Item(3, "carrot"),
+        new Item(2, "banana"),
+    };
+
+    private void ListFunc()
+    {
+        Item item = new Item(5, " watermelon");             // 다른 공간에 할당 및 인식 문제 떄문에 미리 캐싱
+        listitems.Add(item);                                // 삽입 기능
+        listitems.Remove(item);                             // 삭제 기능
+        listitems.RemoveAt(3);                              // 중간 삭제 기능
+        listitems.RemoveAll(x => x.code > 2);               // 델리게이트로 조건에 따라 전부 삭제
+        listitems.Insert(1, new Item(6, "apple"));          // 중간 삽입 기능
+        listitems.Sort((x, y) => x.code.CompareTo(y.code)); // 비교해 정렬
+        listitems.Reverse();                                // 리스트의 원소를 뒤집는다.
+        List<Item> listitemcopy = listitems.ConvertAll(x => new Item(x.code, x.name)); // 리스트에서 깊은 복사가 일어나게한다. (공간 재할당)
+    }
+
+    private void ArrayFunc()
+    {
+        Array.Sort(items, (x, y) => x.code.CompareTo(y.code)); // 정렬
+        Array.ForEach(items, x => x.Print());                  // ForEach를 돌린것 처럼 순회
+        bool b = Array.Exists(items, x => x.code == 3);        // 아이템이 존재할시 true를 반환
+        bool c = Array.TrueForAll(items, x => x.code > 0);     // 아이템의 조건이 전부 만족할시 true를 반환
+        Array.Resize(ref items, 5);                            // 배열의 크기를 바꿀 수 있다.
+    }
+}

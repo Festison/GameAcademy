@@ -2,30 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// ÄÄÆ÷³ÍÆ® ÆĞÅÏ : ºó ÄÁÅ×ÀÌ³Ê¿¡ ÇÊ¿äÇÒ ‹š¸¶´Ù ¿øÇÏ´Â ±â´ÉÀ» °®´Ù ºÙ¿© Æ÷ÇÔ½ÃÅ°´Â ¹æ½Ä ¿¹) ºÎÇ°
-// Æ¯Â¡ : ±â´ÉÀ» ³ª´©¾î °¢ÀÚ µ¶¸³ÀûÀÎ Å¬·¡½º¸¦ ¸¸µé¾î µÎ°í, ¸¸µé¾î µĞ °ÍÀ» ºÎÇ° ºÙÀÌµíÀÌ °®´Ù ºÙÀÏ ¼ö ÀÖ´Ù.
-// ÀåÁ¡ : ÄÄÆ÷³ÍÆ®µé³¢¸® µ¶¸³ÀûÀÌ¸ç °áÇÕµµ°¡ ³·´Ù. ÄÄÆ÷³ÍÆ®¸¸ ¼öÁ¤ÇÏ¸é µÇ¼­ À¯Áöº¸¼ö½Ã ÆíÇÏ´Ù.
+// ì»´í¬ë„ŒíŠ¸ íŒ¨í„´ : ë¹ˆ ì»¨í…Œì´ë„ˆì— í•„ìš”í•  ë•Œë§ˆë‹¤ ì›í•˜ëŠ” ê¸°ëŠ¥ì„ ê°–ë‹¤ ë¶™ì—¬ í¬í•¨ì‹œí‚¤ëŠ” ë°©ì‹ ì˜ˆ) ë¶€í’ˆ
+// íŠ¹ì§• : ê¸°ëŠ¥ì„ ë‚˜ëˆ„ì–´ ê°ì ë…ë¦½ì ì¸ í´ë˜ìŠ¤ë¥¼ ë§Œë“¤ì–´ ë‘ê³ , ë§Œë“¤ì–´ ë‘” ê²ƒì„ ë¶€í’ˆ ë¶™ì´ë“¯ì´ ê°–ë‹¤ ë¶™ì¼ ìˆ˜ ìˆë‹¤.
+// ì¥ì  : ì»´í¬ë„ŒíŠ¸ë“¤ë¼ë¦¬ ë…ë¦½ì ì´ë©° ê²°í•©ë„ê°€ ë‚®ë‹¤. ì»´í¬ë„ŒíŠ¸ë§Œ ìˆ˜ì •í•˜ë©´ ë˜ì„œ ìœ ì§€ë³´ìˆ˜ì‹œ í¸í•˜ë‹¤.
 public class DetectiveComponent : MonoBehaviour
 {
-    [Header("·¹ÀÌ¾î ¸¶½ºÅ©")]
+    [Header("ë ˆì´ì–´ ë§ˆìŠ¤í¬")]
     [SerializeField] LayerMask targetLayerMask;
 
     [Space(10f)]
     [Range(0, 15)]
-    [Header("·¹ÀÌ Ä³½ºÆ® ¹üÀ§")]
+    [Header("ë ˆì´ ìºìŠ¤íŠ¸ ë²”ìœ„")]
     [SerializeField] float radius;
     [Range(0, 15)]
     [SerializeField] float maxDistance;
 
     [Space(10f)]
-    [Header("°¨Áö »óÅÂ")]
+    [Header("ê°ì§€ ìƒíƒœ")]
     [SerializeField]
     bool isRangeDetection;
     [SerializeField]
     bool isRayDetection;
 
     [Space(10f)]
-    [Header("°¨ÁöµÈ Äİ¶óÀÌ´õ")]
+    [Header("ê°ì§€ëœ ì½œë¼ì´ë”")]
     [SerializeField]
     Collider[] cols;
 
@@ -50,20 +50,20 @@ public class DetectiveComponent : MonoBehaviour
 
     void Update()
     {
-        // ¿øÇÏ´Â ½ÃÁ¡¿¡¼­ Æ¯Á¤ Äİ¶óÀÌ´õ µéÀ» °ËÃâ ÇÒ ¼ö ÀÖ´Ù.
+        // ì›í•˜ëŠ” ì‹œì ì—ì„œ íŠ¹ì • ì½œë¼ì´ë” ë“¤ì„ ê²€ì¶œ í•  ìˆ˜ ìˆë‹¤.
         cols = Physics.OverlapSphere(transform.position, radius, targetLayerMask);
         isRangeDetection = (bool)(cols.Length > 0);
 
         if (isRangeDetection)
         {
-            // ·¹ÀÌÄ³½ºÆ®¿¡ ºÎµúÈù ¹°Ã¼
+            // ë ˆì´ìºìŠ¤íŠ¸ì— ë¶€ë”ªíŒ ë¬¼ì²´
             RaycastHit hit;
             Vector3 direction = ((cols[0].transform.position) - transform.position).normalized;
             Debug.DrawLine(transform.position, transform.position + (direction * maxDistance), Color.blue);
 
             if (Physics.Raycast(transform.position, direction, out hit, maxDistance))
             {
-                // ºÎµúÈù ¹°Ã¼ÀÇ ·¹ÀÌ¾î ¸¶½ºÅ©¸¦ °¡Á®¿Â´Ù.
+                // ë¶€ë”ªíŒ ë¬¼ì²´ì˜ ë ˆì´ì–´ ë§ˆìŠ¤í¬ë¥¼ ê°€ì ¸ì˜¨ë‹¤.
                 isRayDetection = CheckInLayerMask(hit.collider.gameObject.layer);
                 if (isRayDetection)
                 {
